@@ -8,11 +8,16 @@ using System.Reactive.Linq;
 using System.Reactive.Concurrency;
 using System.Threading;
 using System.Threading.Tasks;
+using MiniSoccerPro.IViews;
+using System.Diagnostics;
+using MiniSoccerPro.Presenters;
 
 namespace MiniSoccerPro.iOS
 {
-	public partial class ManageTeamController : UIViewController
+	public partial class ManageTeamController : UIViewController, IBaseView
 	{
+		BasePresenter _presenter;
+
 		public ManageTeamController(IntPtr handle) : base(handle)
 		{
 		}
@@ -20,22 +25,6 @@ namespace MiniSoccerPro.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			var sychnronizationContext = SynchronizationContext.Current;
-
-			var api = new Api();
-			 api.GetPost(1)
-			    .ObserveOn(Scheduler.CurrentThread)//  .Default)
-               .SubscribeOn(NewThreadScheduler.Default)
-			   .Timeout(TimeSpan.FromMilliseconds(100))
-               .Subscribe((post) => {
-				   Console.WriteLine("success");
-            }, (error)=> {
-				//InvokeOnMainThread(() =>
-			 //  {//
-				   Console.WriteLine("error");
-				View1.BackgroundColor = UIColor.Black;
-				//});//
-            });
 			ScrollViewContainers.ClipsToBounds = true;
 			ScrollViewContainers.ScrollEnabled = true;
 			ScrollViewContainers.PagingEnabled = true;
@@ -44,6 +33,8 @@ namespace MiniSoccerPro.iOS
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
+			_presenter = new BasePresenter(this);
+			_presenter.Start();
 			View1.Alpha = 1;
 			View2.Alpha = 0;
 			View3.Alpha = 0;
@@ -131,6 +122,19 @@ namespace MiniSoccerPro.iOS
 		public void GoToTab3()
 		{
 			ScrollViewContainers.SetContentOffset(new CGPoint(View.Bounds.Width * 2, 0), true);
+		}
+
+		public void ShowUrl(Url url)
+		{
+			Debug.WriteLine("Showurl");
+		}
+
+		public void ShowError()
+		{
+			InvokeOnMainThread(() =>
+			{
+				Debug.WriteLine("ShowError");
+			});
 		}
 	}
 }

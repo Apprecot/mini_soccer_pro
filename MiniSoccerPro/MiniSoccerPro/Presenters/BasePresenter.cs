@@ -7,6 +7,7 @@ using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace MiniSoccerPro.Presenters
 {
@@ -14,10 +15,10 @@ namespace MiniSoccerPro.Presenters
     {
         IBaseView _view;
 
-        public BasePresenter(IBaseView view)
+		public BasePresenter(IBaseView view)
         {
             _view = view;
-        }
+		}
 
         public void Start()
         {
@@ -25,7 +26,7 @@ namespace MiniSoccerPro.Presenters
 
             api.GetPost(1)
               .SubscribeOn(NewThreadScheduler.Default)
-              .ObserveOn(Scheduler.Default)
+			   .ObserveOn(SynchronizationContext.Current)
               .Timeout(TimeSpan.FromMilliseconds(100))
               .Subscribe((url) => {
                   _view.ShowUrl(url);
