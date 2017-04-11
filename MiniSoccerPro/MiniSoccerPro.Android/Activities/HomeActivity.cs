@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
+using MiniSoccerPro.Network;
 
 namespace MiniSoccerPro.Droid.Activities
 {
@@ -22,6 +23,12 @@ namespace MiniSoccerPro.Droid.Activities
 
             // Create your application here
             SetContentView(Resource.Layout.activity_home);
+
+            var api = new Api();
+
+            api.GetPost(1).Subscribe((post) => {
+                Console.WriteLine(post.title);
+            });
         }
     }
 }

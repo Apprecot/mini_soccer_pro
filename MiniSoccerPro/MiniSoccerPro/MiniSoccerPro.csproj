@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Models\ServiceResponse.cs" />
+    <Compile Include="Network\Api.cs" />
     <Compile Include="Network\ApprecotRestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace MiniSoccerPro.Network
 {
     public class ApprecotRestService
     {
-        public static readonly HttpClient Client = new HttpClient(new NativeMessageHandler());
+        private static readonly HttpClient Client = new HttpClient(new NativeMessageHandler());
 
         private static readonly ApprecotRestService _instance = new ApprecotRestService();
 
@@ -35,7 +35,6 @@ namespace MiniSoccerPro.Network
 
                 string json = string.Empty;
                 var serviceResponse = new ServiceResponse();
-
                 try
                 {
                     using (var response = await Client.GetAsync(url).ConfigureAwait(false))
