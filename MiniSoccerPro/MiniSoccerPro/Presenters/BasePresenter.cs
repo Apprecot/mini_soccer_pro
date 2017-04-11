@@ -1,7 +1,9 @@
-﻿using MiniSoccerPro.IViews;
+﻿using MiniSoccerPro.Extensions;
+using MiniSoccerPro.IViews;
 using MiniSoccerPro.Network;
 using System;
 using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Threading;
 
@@ -10,6 +12,7 @@ namespace MiniSoccerPro.Presenters
     public class BasePresenter
     {
         IBaseView _view;
+        CompositeDisposable _disposables;
 
         public BasePresenter(IBaseView view)
         {
@@ -27,7 +30,12 @@ namespace MiniSoccerPro.Presenters
                   _view.Execute(() => _view.ShowUrl(url));
               }, (error) => {
                   _view.Execute(()=>_view.ShowError());
-              });
+              }).DisposeWith(_disposables);
+        }
+
+        public void Destroy()
+        {
+            _disposables.Dispose();
         }
     }
 }

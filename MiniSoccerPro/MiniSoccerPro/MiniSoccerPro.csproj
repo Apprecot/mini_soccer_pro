@@ -31,14 +31,13 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IViews\IBaseView.cs" />
     <Compile Include="Models\ServiceResponse.cs" />
     <Compile Include="Network\Api.cs" />
     <Compile Include="Network\ApprecotRestService.cs" />
-    <Compile Include="Presenters\BasePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IViews\IBaseView.cs" />
+    <Compile Include="Extensions\ObservableExtensions.cs" />
     <Compile Include="Presenters\BasePresenter.cs" />
+    <Compile Include="IViews\IBaseView.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
