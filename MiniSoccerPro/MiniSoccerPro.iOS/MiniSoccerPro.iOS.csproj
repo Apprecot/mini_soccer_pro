@@ -69,6 +69,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MiniSoccerPro\MiniSoccerPro.csproj">
       <Name>MiniSoccerPro</Name>
+      <Project>{E4413280-CDDC-4128-90F6-2BED5A739EC0}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,14 @@
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainTabBarController.cs" />
+    <Compile Include="MainTabBarController.designer.cs">
+      <DependentUpon>MainTabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTeamController.cs" />
+    <Compile Include="ManageTeamController.designer.cs">
+      <DependentUpon>ManageTeamController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

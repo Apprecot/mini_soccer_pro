@@ -19,6 +19,8 @@ namespace MiniSoccerPro.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+			// create a new window instance based on the screen size
+
 			return true;
 		}
 
