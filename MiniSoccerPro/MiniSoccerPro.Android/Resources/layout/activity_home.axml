@@ -11,8 +11,10 @@
     android:layout_above="@+id/bottom_navigation">
     <include 
       layout="@layout/toolbar" />
-    <include 
-      layout="@layout/fragment_transfers" />
+    <FrameLayout
+      android:id="@+id/fl_content"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
   </LinearLayout>
 
   <android.support.design.widget.BottomNavigationView
