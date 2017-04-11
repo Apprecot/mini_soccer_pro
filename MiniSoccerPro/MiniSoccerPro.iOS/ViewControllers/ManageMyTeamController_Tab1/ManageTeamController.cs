@@ -15,7 +15,7 @@ namespace MiniSoccerPro.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			ScrollViewContainers.ClipsToBounds = true;
+        	ScrollViewContainers.ClipsToBounds = true;
 			ScrollViewContainers.ScrollEnabled = true;
 			ScrollViewContainers.PagingEnabled = true;
 		}
