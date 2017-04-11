@@ -65,6 +65,20 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\packages\System.Reactive.Interfaces.3.1.1\lib\netstandard1.0\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\packages\System.Reactive.Core.3.1.1\lib\netstandard1.3\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\packages\System.Reactive.Linq.3.1.1\lib\netstandard1.3\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\packages\System.Reactive.PlatformServices.3.1.1\lib\netstandard1.3\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MiniSoccerPro\MiniSoccerPro.csproj">
@@ -124,6 +138,36 @@
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\ic_bottom_championship.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\ic_bottom_profile.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\ic_bottom_stats.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\ic_bottom_team.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\ic_bottom_arrows.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Resources\ITunesArtwork" />
@@ -136,22 +180,29 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainTabBarController.cs" />
-    <Compile Include="MainTabBarController.designer.cs">
+    <Compile Include="ViewControllers\MainTabController\MainTabBarController.cs" />
+    <Compile Include="ViewControllers\MainTabController\MainTabBarController.designer.cs">
       <DependentUpon>MainTabBarController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageTeamController.cs" />
-    <Compile Include="ManageTeamController.designer.cs">
+    <Compile Include="ViewControllers\ManageMyTeamController_Tab1\ManageTeamController.cs" />
+    <Compile Include="ViewControllers\ManageMyTeamController_Tab1\ManageTeamController.designer.cs">
       <DependentUpon>ManageTeamController.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewControllers\" />
+    <Folder Include="ViewControllers\MainTabController\" />
+    <Folder Include="ViewControllers\ManageMyTeamController_Tab1\" />
+    <Folder Include="Resources\Images.xcassets\Championship.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Profile.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Stats.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Team.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Transfers.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
