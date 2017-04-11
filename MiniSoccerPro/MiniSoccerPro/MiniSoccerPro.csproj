@@ -37,6 +37,8 @@
     <Compile Include="Network\ApprecotRestService.cs" />
     <Compile Include="Presenters\BasePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IViews\IBaseView.cs" />
+    <Compile Include="Presenters\BasePresenter.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
