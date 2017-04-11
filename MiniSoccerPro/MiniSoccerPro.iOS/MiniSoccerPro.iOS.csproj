@@ -138,16 +138,36 @@
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\ic_bottom_championship.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\ic_bottom_profile.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\ic_bottom_stats.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\ic_bottom_team.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\ic_bottom_arrows.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\ic_bottom_championship.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\ic_bottom_profile.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\ic_bottom_stats.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\ic_bottom_team.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\ic_bottom_arrows.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Resources\ITunesArtwork" />
