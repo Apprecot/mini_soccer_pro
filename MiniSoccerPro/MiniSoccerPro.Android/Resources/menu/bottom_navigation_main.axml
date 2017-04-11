@@ -5,25 +5,30 @@
       android:id="@+id/action_team"
       android:enabled="true"
       android:title="My Team"
+      android:icon="@drawable/ic_bottom_team"
       app:showAsAction="always" />
   <item
       android:id="@+id/action_tournaments"
       android:enabled="true"
       android:title="My Tournaments"
+      android:icon="@drawable/ic_bottom_championship"
       app:showAsAction="always" />
   <item
       android:id="@+id/action_transfers"
       android:enabled="true"
       android:title="Transfers"
+      android:icon="@drawable/ic_bottom_arrows"
       app:showAsAction="always" />
   <item
       android:id="@+id/action_stats"
       android:enabled="true"
       android:title="Stats"
+      android:icon="@drawable/ic_bottom_stats"
       app:showAsAction="always" />
   <item
       android:id="@+id/action_profile"
       android:enabled="true"
       android:title="Profile"
+      android:icon="@drawable/ic_bottom_profile"
       app:showAsAction="always" />
 </menu>
