@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/primary"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/white"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/primary"
         app:menu="@menu/bottom_navigation_main" />
 </RelativeLayout>
