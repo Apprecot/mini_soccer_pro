@@ -124,6 +124,16 @@
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Championship.imageset\ic_bottom_championship.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\ic_bottom_profile.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Stats.imageset\ic_bottom_stats.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Team.imageset\ic_bottom_team.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Transfers.imageset\ic_bottom_arrows.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Resources\ITunesArtwork" />
@@ -140,18 +150,24 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainTabBarController.cs" />
-    <Compile Include="MainTabBarController.designer.cs">
+    <Compile Include="ViewControllers\MainTabController\MainTabBarController.cs" />
+    <Compile Include="ViewControllers\MainTabController\MainTabBarController.designer.cs">
       <DependentUpon>MainTabBarController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageTeamController.cs" />
-    <Compile Include="ManageTeamController.designer.cs">
+    <Compile Include="ViewControllers\ManageMyTeamController_Tab1\ManageTeamController.cs" />
+    <Compile Include="ViewControllers\ManageMyTeamController_Tab1\ManageTeamController.designer.cs">
       <DependentUpon>ManageTeamController.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewControllers\" />
+    <Folder Include="ViewControllers\MainTabController\" />
+    <Folder Include="ViewControllers\ManageMyTeamController_Tab1\" />
+    <Folder Include="Resources\Images.xcassets\Championship.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Profile.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Stats.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Team.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Transfers.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
