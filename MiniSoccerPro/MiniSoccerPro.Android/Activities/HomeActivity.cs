@@ -7,9 +7,9 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Reactive.Concurrency;
 using Android.Widget;
-using MiniSoccerPro.Presenters;
-using MiniSoccerPro.IViews;
 using System.Threading;
+using MiniSoccerPro.IViews;
+using MiniSoccerPro.Presenters;
 
 namespace MiniSoccerPro.Droid.Activities
 {
@@ -48,13 +48,52 @@ namespace MiniSoccerPro.Droid.Activities
 
             StrictMode.SetThreadPolicy(new StrictMode.ThreadPolicy.Builder().DetectAll().PenaltyLog().Build());
 
-            tv = FindViewById<TextView>(Resource.Id.tv);
-            pb = FindViewById<ProgressBar>(Resource.Id.pb);
+            //tv = FindViewById<TextView>(Resource.Id.tv);
+            //pb = FindViewById<ProgressBar>(Resource.Id.pb);
 
             pb.Visibility = Android.Views.ViewStates.Visible;
 
             var presenter = new BasePresenter(this);
             presenter.Start();
+
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            SetContentView(Resource.Layout.activity_home);
+
+            //_bottomBar = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
+
+            //var api = new Api();
+
+            //api.GetPost(1).Subscribe((post) => {
+            //    Console.WriteLine(post.title);
+            //});
+
+            //Observable.FromEventPattern<NavigationItemSelectedEventArgs>(
+            //  handler => _bottomBar.NavigationItemSelected += handler,
+            //  handler => _bottomBar.NavigationItemSelected -= handler
+            //  )
+            //  .Select(x => x.EventArgs)
+            //  .Subscribe((args) =>
+            //  {
+            //      switch (args.Item.ItemId)
+            //      {
+            //          case Resource.Id.action_team:
+            //              break;
+            //          case Resource.Id.action_tournaments:
+            //              break;
+            //          case Resource.Id.action_transfers:
+            //              SupportFragmentManager.BeginTransaction()
+            //                .SetTransitionStyle((int)FragmentTransit.FragmentFade)
+            //                .Replace(Resource.Id.fl_content, new MyTransfersFragment())
+            //                .Commit();
+            //              break;
+            //          case Resource.Id.action_stats:
+            //              break;
+            //          case Resource.Id.action_profile:
+            //              break;
+            //      }
+            //  });
         }
     }
 }
