@@ -14,6 +14,7 @@ namespace MiniSoccerPro.Network
     public class ApprecotRestService
     {
         private static readonly HttpClient Client = new HttpClient(new NativeMessageHandler());
+       
 
         private static readonly ApprecotRestService _instance = new ApprecotRestService();
 
@@ -64,7 +65,6 @@ namespace MiniSoccerPro.Network
                 catch (HttpRequestException e)
                 {
                     Debug.WriteLine(e.Message);
-                    observer.OnError(new Exception(e.Message));
                 }
                 catch (WebException e)
                 {
