@@ -11,12 +11,16 @@ namespace MiniSoccerPro.Network
         {
             return Observable.Create<Post>((observer) =>
             {
+                var subscription =
                 ApprecotRestService.Instance.GetAsync($"https://jsonplaceholder.typicode.com/posts/{id}")
                 .Subscribe((response) => {
                     var post = JsonConvert.DeserializeObject<Post>(response.Json);
                     observer.OnNext(post);
                     observer.OnCompleted();
                 });
+
+                subscription.Dispose();
+
                 return Disposable.Empty;
             });
         }
