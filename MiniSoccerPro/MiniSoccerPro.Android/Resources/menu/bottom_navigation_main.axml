@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/action_team"
+      android:enabled="true"
+      android:title="My Team"
+      app:showAsAction="always" />
+  <item
+      android:id="@+id/action_tournaments"
+      android:enabled="true"
+      android:title="My Tournaments"
+      app:showAsAction="always" />
+  <item
+      android:id="@+id/action_transfers"
+      android:enabled="true"
+      android:title="Transfers"
+      app:showAsAction="always" />
+  <item
+      android:id="@+id/action_stats"
+      android:enabled="true"
+      android:title="Stats"
+      app:showAsAction="always" />
+  <item
+      android:id="@+id/action_profile"
+      android:enabled="true"
+      android:title="Profile"
+      app:showAsAction="always" />
+</menu>
