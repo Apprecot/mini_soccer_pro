@@ -19,7 +19,7 @@ namespace MiniSoccerPro.Network
                     observer.OnCompleted();
                 });
 
-                subscription.Dispose();
+               // subscription.Dispose();
 
                 return Disposable.Empty;
             });
