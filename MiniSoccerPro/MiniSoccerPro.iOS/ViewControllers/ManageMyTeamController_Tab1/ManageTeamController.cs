@@ -127,6 +127,7 @@ namespace MiniSoccerPro.iOS
 		public void ShowUrl(Url url)
 		{
 			Debug.WriteLine("Showurl");
+			View1.BackgroundColor = UIColor.Black;
 		}
 
 		public void ShowError()
@@ -134,7 +135,13 @@ namespace MiniSoccerPro.iOS
 			InvokeOnMainThread(() =>
 			{
 				Debug.WriteLine("ShowError");
+				View1.BackgroundColor = UIColor.Gray;
 			});
+		}
+
+		public void Execute(Action action)
+		{
+			InvokeOnMainThread(action);
 		}
 	}
 }
