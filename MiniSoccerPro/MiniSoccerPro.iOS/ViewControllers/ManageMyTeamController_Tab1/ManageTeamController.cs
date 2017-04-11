@@ -3,6 +3,11 @@ using System;
 using UIKit;
 using System.Drawing;
 using CoreGraphics;
+using MiniSoccerPro.Network;
+using System.Reactive.Linq;
+using System.Reactive.Concurrency;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MiniSoccerPro.iOS
 {
@@ -15,7 +20,23 @@ namespace MiniSoccerPro.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-        	ScrollViewContainers.ClipsToBounds = true;
+			var sychnronizationContext = SynchronizationContext.Current;
+
+			var api = new Api();
+			 api.GetPost(1)
+			    .ObserveOn(Scheduler.CurrentThread)//  .Default)
+               .SubscribeOn(NewThreadScheduler.Default)
+			   .Timeout(TimeSpan.FromMilliseconds(100))
+               .Subscribe((post) => {
+				   Console.WriteLine("success");
+            }, (error)=> {
+				//InvokeOnMainThread(() =>
+			 //  {//
+				   Console.WriteLine("error");
+				View1.BackgroundColor = UIColor.Black;
+				//});//
+            });
+			ScrollViewContainers.ClipsToBounds = true;
 			ScrollViewContainers.ScrollEnabled = true;
 			ScrollViewContainers.PagingEnabled = true;
 		}
