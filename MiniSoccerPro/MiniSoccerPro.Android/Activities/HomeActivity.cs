@@ -1,16 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.Support.V7.App;
 using MiniSoccerPro.Network;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+using System.Reactive.Concurrency;
+using Android.Widget;
 
 namespace MiniSoccerPro.Droid.Activities
 {
@@ -24,11 +20,29 @@ namespace MiniSoccerPro.Droid.Activities
             // Create your application here
             SetContentView(Resource.Layout.activity_home);
 
+            StrictMode.SetVmPolicy(new StrictMode.VmPolicy.Builder().DetectActivityLeaks().PenaltyLog().Build());
+
+            StrictMode.SetThreadPolicy(new StrictMode.ThreadPolicy.Builder().DetectAll().PenaltyLog().Build());
+
             var api = new Api();
 
-            api.GetPost(1).Subscribe((post) => {
-                Console.WriteLine(post.title);
+            var tv = FindViewById<TextView>(Resource.Id.tv);
+            var pb = FindViewById<ProgressBar>(Resource.Id.pb);
+
+            pb.Visibility = Android.Views.ViewStates.Visible;
+
+            api.GetPost(1)
+               .SubscribeOn(NewThreadScheduler.Default)
+               .ObserveOn(Android.App.Application.SynchronizationContext)
+               .Timeout(TimeSpan.FromMilliseconds(100))
+               .Subscribe((post) => {
+                pb.Visibility = Android.Views.ViewStates.Gone;
+                tv.Text = post.brandsimages_base_url;
+            }, (error)=> {
+                pb.Visibility = Android.Views.ViewStates.Gone;
+                tv.Text = "Timed Out";
             });
+
         }
     }
 }
