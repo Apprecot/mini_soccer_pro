@@ -1,12 +1,9 @@
 ﻿using MiniSoccerPro.IViews;
 using MiniSoccerPro.Network;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace MiniSoccerPro.Presenters
 {
@@ -25,12 +22,11 @@ namespace MiniSoccerPro.Presenters
 
             api.GetPost(1)
               .SubscribeOn(NewThreadScheduler.Default)
-              .ObserveOn(Scheduler.Default)
-              .Timeout(TimeSpan.FromMilliseconds(100))
+              .Timeout(TimeSpan.FromMilliseconds(10000))
               .Subscribe((url) => {
-                  _view.ShowUrl(url);
+                  _view.Execute(() => _view.ShowUrl(url));
               }, (error) => {
-                  _view.ShowError();
+                  _view.Execute(()=>_view.ShowError());
               });
         }
     }

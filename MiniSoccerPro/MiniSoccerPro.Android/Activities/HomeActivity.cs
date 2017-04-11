@@ -9,6 +9,7 @@ using System.Reactive.Concurrency;
 using Android.Widget;
 using MiniSoccerPro.Presenters;
 using MiniSoccerPro.IViews;
+using System.Threading;
 
 namespace MiniSoccerPro.Droid.Activities
 {
@@ -17,11 +18,17 @@ namespace MiniSoccerPro.Droid.Activities
     {
         private ProgressBar pb;
         private TextView tv;
+        private SynchronizationContext uiThread;
+
+        public void Execute(Action action)
+        {
+            RunOnUiThread(action);
+        }
 
         public void ShowError()
         {
-            pb.Visibility = Android.Views.ViewStates.Gone;
-            tv.Text = "Timed Out";
+                pb.Visibility = Android.Views.ViewStates.Gone;
+                tv.Text = "Timed Out";
         }
 
         public void ShowUrl(Url url)
@@ -41,15 +48,12 @@ namespace MiniSoccerPro.Droid.Activities
 
             StrictMode.SetThreadPolicy(new StrictMode.ThreadPolicy.Builder().DetectAll().PenaltyLog().Build());
 
-            var presenter = new BasePresenter(this);
-
-            //Android.App.Application.SynchronizationContext
-            
             tv = FindViewById<TextView>(Resource.Id.tv);
             pb = FindViewById<ProgressBar>(Resource.Id.pb);
 
             pb.Visibility = Android.Views.ViewStates.Visible;
 
+            var presenter = new BasePresenter(this);
             presenter.Start();
         }
     }

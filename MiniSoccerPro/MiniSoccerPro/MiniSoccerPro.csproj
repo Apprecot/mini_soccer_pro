@@ -31,15 +31,14 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IViews\IBaseView.cs" />
     <Compile Include="Models\ServiceResponse.cs" />
     <Compile Include="Network\Api.cs" />
     <Compile Include="Network\ApprecotRestService.cs" />
+    <Compile Include="Presenters\BasePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IViews\" />
-    <Folder Include="Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>

@@ -11,5 +11,6 @@ namespace MiniSoccerPro.IViews
     {
         void ShowUrl(Url url);
         void ShowError();
+        void Execute(Action action);
     }
 }
