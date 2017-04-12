@@ -20,7 +20,7 @@ namespace MiniSoccerPro.Droid.Activities
         private TextView tv;
         private SynchronizationContext uiThread;
 
-        public void Execute(Action action)
+        public void ExecuteOnMainThread(Action action)
         {
             RunOnUiThread(action);
         }

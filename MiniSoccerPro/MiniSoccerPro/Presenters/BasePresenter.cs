@@ -28,9 +28,9 @@ namespace MiniSoccerPro.Presenters
               .SubscribeOn(NewThreadScheduler.Default)
               .Timeout(TimeSpan.FromMilliseconds(10000))
               .Subscribe((url) => {
-                  _view.Execute(() => _view.ShowUrl(url));
+                  _view.ExecuteOnMainThread(() => _view.ShowUrl(url));
               }, (error) => {
-                  _view.Execute(()=>_view.ShowError());
+                  _view.ExecuteOnMainThread(()=>_view.ShowError());
               }).DisposeWith(_disposables);
         }
 

@@ -1,9 +1,5 @@
 ﻿using MiniSoccerPro.Network;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniSoccerPro.IViews
 {
@@ -11,6 +7,6 @@ namespace MiniSoccerPro.IViews
     {
         void ShowUrl(Url url);
         void ShowError();
-        void Execute(Action action);
+        void ExecuteOnMainThread(Action action);
     }
 }
