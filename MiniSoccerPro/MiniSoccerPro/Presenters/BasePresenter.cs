@@ -17,6 +17,7 @@ namespace MiniSoccerPro.Presenters
         public BasePresenter(IBaseView view)
         {
             _view = view;
+            _disposables = new CompositeDisposable();
         }
 
         public void Start()
@@ -33,8 +34,9 @@ namespace MiniSoccerPro.Presenters
               }).DisposeWith(_disposables);
         }
 
-        public void Destroy()
+        public void Stop()
         {
+            _view = null;
             _disposables.Dispose();
         }
     }
